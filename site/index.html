@@ -11,8 +11,13 @@
     p, li { line-height: 1.6; }
     .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0; }
     a.button { background: #173f8a; color: white; padding: .8rem 1rem; border-radius: .5rem; text-decoration: none; }
+    a.button:hover { background: #0f2f6d; }
+    a.button:focus-visible { outline: 3px solid #f2c94c; outline-offset: 3px; }
     a.secondary { background: #e8edf7; color: #173f8a; }
-    code { overflow-wrap: anywhere; }
+    a.secondary:hover { background: #d9e2f2; }
+    .manual { background: #f4f7fc; border-left: 4px solid #173f8a; border-radius: .5rem; padding: 1rem 1.25rem; }
+    .manual h2 { margin-top: 0; }
+    code { display: block; background: white; border: 1px solid #d9e2f2; border-radius: .35rem; overflow-wrap: anywhere; padding: .75rem; }
     small { color: #526078; }
   </style>
 </head>
@@ -21,13 +26,15 @@
     <h1>Real Madrid · partidos oficiales</h1>
     <p>Calendario actualizado diariamente. Incluye Liga, Champions League, Copa del Rey, Supercopas y otras competiciones oficiales. Excluye amistosos y entrenamientos.</p>
     <div class="actions">
-      <a class="button" href="https://calendar.google.com/calendar/render?cid=https%3A%2F%2Faleafe21.github.io%2Freal-madrid-calendario%2Freal-madrid.ics">Añadir a Google Calendar</a>
+      <a class="button" href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Faleafe21.github.io%2Freal-madrid-calendario%2Freal-madrid.ics" target="_blank" rel="noopener">Añadir a Google Calendar</a>
       <a class="button" href="webcal://aleafe21.github.io/real-madrid-calendario/real-madrid.ics">Añadir a Outlook</a>
       <a class="button secondary" href="real-madrid.ics" download>Descargar .ics</a>
     </div>
-    <h2>Suscripción manual</h2>
-    <p>Copia esta dirección y añádela como calendario desde URL:</p>
-    <p><code>https://aleafe21.github.io/real-madrid-calendario/real-madrid.ics</code></p>
+    <section class="manual">
+      <h2>Si Google no muestra los partidos</h2>
+      <p>Elimina el calendario vacío y, desde una computadora, entra en <strong>Otros calendarios → + → Desde URL</strong>. Pega esta dirección y pulsa <strong>Añadir calendario</strong>:</p>
+      <code>https://aleafe21.github.io/real-madrid-calendario/real-madrid.ics</code>
+    </section>
     <p><small>Los horarios confirmados se adaptan a tu zona horaria. Las fechas sin horario confirmado aparecen como eventos de día completo.</small></p>
   </main>
 </body>

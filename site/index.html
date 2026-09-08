@@ -10,13 +10,15 @@
     h1 { line-height: 1.1; }
     p, li { line-height: 1.6; }
     .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0; }
-    a.button { background: #173f8a; color: white; padding: .8rem 1rem; border-radius: .5rem; text-decoration: none; }
-    a.button:hover { background: #0f2f6d; }
-    a.button:focus-visible { outline: 3px solid #f2c94c; outline-offset: 3px; }
+    a.button, button.button { background: #173f8a; border: 0; color: white; cursor: pointer; font: inherit; padding: .8rem 1rem; border-radius: .5rem; text-decoration: none; }
+    a.button:hover, button.button:hover { background: #0f2f6d; }
+    a.button:focus-visible, button.button:focus-visible { outline: 3px solid #f2c94c; outline-offset: 3px; }
     a.secondary { background: #e8edf7; color: #173f8a; }
     a.secondary:hover { background: #d9e2f2; }
     .manual { background: #f4f7fc; border-left: 4px solid #173f8a; border-radius: .5rem; padding: 1rem 1.25rem; }
     .manual h2 { margin-top: 0; }
+    .manual ol { padding-left: 1.25rem; }
+    .copy-status { color: #176b3a; font-weight: 700; min-height: 1.5rem; }
     code { display: block; background: white; border: 1px solid #d9e2f2; border-radius: .35rem; overflow-wrap: anywhere; padding: .75rem; }
     small { color: #526078; }
   </style>
@@ -26,16 +28,40 @@
     <h1>Real Madrid · partidos oficiales</h1>
     <p>Calendario actualizado diariamente. Incluye Liga, Champions League, Copa del Rey, Supercopas y otras competiciones oficiales. Excluye amistosos y entrenamientos.</p>
     <div class="actions">
-      <a class="button" href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Faleafe21.github.io%2Freal-madrid-calendario%2Freal-madrid.ics" target="_blank" rel="noopener">Añadir a Google Calendar</a>
       <a class="button" href="webcal://aleafe21.github.io/real-madrid-calendario/real-madrid.ics">Añadir a Outlook</a>
       <a class="button secondary" href="real-madrid.ics" download>Descargar .ics</a>
     </div>
     <section class="manual">
-      <h2>Si Google no muestra los partidos</h2>
-      <p>Elimina el calendario vacío y, desde una computadora, entra en <strong>Otros calendarios → + → Desde URL</strong>. Pega esta dirección y pulsa <strong>Añadir calendario</strong>:</p>
-      <code>https://aleafe21.github.io/real-madrid-calendario/real-madrid.ics</code>
+      <h2>Añadir a Google Calendar</h2>
+      <p><strong>Hazlo desde una computadora.</strong> Google no permite completar esta suscripción desde su aplicación móvil.</p>
+      <ol>
+        <li>Pulsa <strong>Copiar enlace</strong>.</li>
+        <li>Abre Google Calendar y pega el enlace en el campo <strong>URL del calendario</strong>.</li>
+        <li>Pulsa <strong>Añadir calendario</strong>.</li>
+      </ol>
+      <div class="actions">
+        <button class="button" id="copy-calendar" type="button">1. Copiar enlace</button>
+        <a class="button secondary" href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank" rel="noopener">2. Abrir Google Calendar</a>
+      </div>
+      <code id="calendar-url">https://aleafe21.github.io/real-madrid-calendario/real-madrid.ics</code>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
     </section>
     <p><small>Los horarios confirmados se adaptan a tu zona horaria. Las fechas sin horario confirmado aparecen como eventos de día completo.</small></p>
   </main>
+  <script>
+    const calendarUrl = document.getElementById('calendar-url').textContent;
+    const copyButton = document.getElementById('copy-calendar');
+    const copyStatus = document.getElementById('copy-status');
+
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(calendarUrl);
+        copyStatus.textContent = 'Enlace copiado. Ahora abre Google Calendar.';
+        copyButton.textContent = 'Enlace copiado';
+      } catch {
+        copyStatus.textContent = 'No se pudo copiar automáticamente. Selecciona y copia el enlace mostrado arriba.';
+      }
+    });
+  </script>
 </body>
 </html>

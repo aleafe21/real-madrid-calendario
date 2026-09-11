@@ -6,12 +6,10 @@
   "provisional_events": 30,
   "changes": {
     "added": [],
-    "modified": [
-      "🏟⚽ Real Madrid vs Villarreal"
-    ],
+    "modified": [],
     "removed": []
   },
   "source": "https://publish.realmadrid.com/content/sling/app-servlets/realmadrid/ical.3kq9cckrnlogidldtdie2fkbl.es-es.ics",
-  "checked_at_utc": "2026-09-10T14:24:58.292924Z",
+  "checked_at_utc": "2026-09-11T14:24:47.924496Z",
   "calendar": "real-madrid.ics"
 }

@@ -3,13 +3,15 @@
   "source_events": 51,
   "published_events": 47,
   "excluded_events": 4,
-  "provisional_events": 30,
+  "provisional_events": 29,
   "changes": {
     "added": [],
-    "modified": [],
+    "modified": [
+      "🏟⚽ Real Madrid vs Sevilla"
+    ],
     "removed": []
   },
   "source": "https://publish.realmadrid.com/content/sling/app-servlets/realmadrid/ical.3kq9cckrnlogidldtdie2fkbl.es-es.ics",
-  "checked_at_utc": "2026-09-15T14:59:10.668108Z",
+  "checked_at_utc": "2026-09-16T14:57:51.355553Z",
   "calendar": "real-madrid.ics"
 }

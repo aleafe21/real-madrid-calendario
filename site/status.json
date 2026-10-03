@@ -3,13 +3,15 @@
   "source_events": 51,
   "published_events": 47,
   "excluded_events": 4,
-  "provisional_events": 28,
+  "provisional_events": 27,
   "changes": {
     "added": [],
-    "modified": [],
+    "modified": [
+      "🏟⚽ Racing de Santander vs Real Madrid"
+    ],
     "removed": []
   },
   "source": "https://publish.realmadrid.com/content/sling/app-servlets/realmadrid/ical.3kq9cckrnlogidldtdie2fkbl.es-es.ics",
-  "checked_at_utc": "2026-10-02T16:15:51.272055Z",
+  "checked_at_utc": "2026-10-03T14:43:19.933313Z",
   "calendar": "real-madrid.ics"
 }

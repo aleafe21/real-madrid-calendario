@@ -6,13 +6,10 @@
   "provisional_events": 23,
   "changes": {
     "added": [],
-    "modified": [
-      "🏟⚽ Real Madrid vs Alavés",
-      "🏟⚽ Real Sociedad vs Real Madrid"
-    ],
+    "modified": [],
     "removed": []
   },
   "source": "https://publish.realmadrid.com/content/sling/app-servlets/realmadrid/ical.3kq9cckrnlogidldtdie2fkbl.es-es.ics",
-  "checked_at_utc": "2026-11-06T17:28:14.252214Z",
+  "checked_at_utc": "2026-11-07T16:24:04.527707Z",
   "calendar": "real-madrid.ics"
 }
